@@ -1,0 +1,54 @@
+
+    /* Stop scroll */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: #eed9c4;
+    font-family: "Inter", sans-serif;
+}
+
+
+/* Collage container */
+    .collage-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 40px; /* ← OPTIONAL: built-in spacing! */
+    }
+    .collage-title {
+        margin-right: 70px;   /* space between text and collage */
+        font-size: 32px;
+        color: #141414;
+        font-family: Arial, sans-serif;
+    }
+
+
+/* Collage image */
+.collage {
+    max-width: 90vw;         /* keep from touching edges */
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+}
+
+/* Hotspots — use percentages! */
+.hotspot {
+    position: absolute;
+    cursor: pointer;
+    /* debug:
+    background: rgba(255,0,0,0.2);
+    */
+}
+
+
+.h1 { top: 20%; left: 35%; width: 18%; height: 22%; }
+.h2 { top: 40%; left: 60%; width: 20%; height: 25%; }
+.h3 { top: 70%; left: 25%; width: 15%; height: 18%; }
