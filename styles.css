@@ -19,20 +19,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;   /* center vertically */
+    justify-content: center;
     height: 100vh;
-    gap: 14px;                 /* space between title + collage */
+    gap: 14px;
     padding-top: 0;
     box-sizing: border-box;
 }
 
-/* centered title */
 .hero-centered {
     text-align: center;
     max-width: 600px;
 }
 
-.hero-centered h1 {
+.hero-centered h2 {
     margin: 0;
     font-size: 3rem;
 }
@@ -43,20 +42,17 @@ body {
     opacity: 0.85;
 }
 
-/* === COLLAGE === */
+
 .collage-grid {
     position: relative;
     width: 850px;
     height: 600px;
-
-    /* small upward nudge + scale */
     transform: translateY(-40px) scale(0.75) translateX(135px);
     transform-origin: top center;
-
-    margin: 0 auto;            /* center horizontally */
+    margin: 0 auto;
 }
 
-/* base tile */
+
 .tile {
     position: absolute;
     width: 160px;
@@ -80,7 +76,6 @@ body {
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.65);
 }
 
-/* === POSTER POSITIONS (unchanged) === */
 
 .tile-crochet         { transform: translate(380px,   700px); }
 .tile-robotics        { transform: translate(-150px,   590px); }
@@ -96,7 +91,12 @@ body {
 .tile-photography     { transform: translate(130px,    620px); }
 .tile-windCoolingTower{ transform: translate(-130px,   260px); }
 
-/* === INDIVIDUAL POSTER PAGES (like /me) === */
+
+body.project-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 
 .project-page {
     max-width: 800px;
@@ -168,7 +168,7 @@ body {
     text-decoration: underline;
 }
 
-/* === CONTACT ROW === */
+
 
 .contact-section {
     margin-top: 3rem;
@@ -205,7 +205,22 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
 }
 
-/* === TOOLTIP === */
+.photo-strip {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.photo-strip img {
+    width: 30%;
+    max-width: 260px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
 #tooltip {
     position: fixed;
     padding: 6px 10px;
@@ -221,3 +236,57 @@ body {
     transform: translate(-50%, -120%);
 }
 
+.landing-body {
+    background:
+            radial-gradient(circle at 10% 0%, #3c3a7a 0, transparent 50%),
+            radial-gradient(circle at 90% 0%, #e6373f 0, transparent 55%),
+            linear-gradient(180deg, #0a0715 0, #020307 100%);
+    font-family: "Spline Sans Mono", monospace;
+    color: #fdf5ea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.landing-wrapper {
+    text-align: center;
+}
+
+.landing-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.landing-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 45px;
+}
+
+.landing-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+}
+
+.yes-button,
+.no-button {
+    padding: 12px 26px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: #0a0715;
+    background: #fdf5ea;
+    transition: transform 0.2s ease;
+}
+
+.yes-button:hover {
+    transform: scale(1.1);
+}
+
+.no-button {
+    position: relative;
+}
