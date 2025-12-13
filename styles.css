@@ -31,24 +31,12 @@
     z-index: 1;
 }
 
-.collage-stage{
+.collage-stage {
     width: 100%;
     display: flex;
-    justify-content: center;  /* center horizontally */
-    align-items: center;      /* center vertically */
-    padding: 24px 0 10px;
-    padding-down: 1000px;
-}
-
-.collage-grid{
-    position: relative;
-    width: 850px;
-    height: 600px;
-
-    transform: translateY(-70px) 
-    scale(0.75) 
-    translateX(135px);
-    transform-origin: center;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 
@@ -62,6 +50,17 @@ html, body {
     overflow: hidden !important;
 }
 
+.terminal-home {
+    width: min(920px, 92vw);
+}
+
+.terminal-body-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* center title + collage horizontally */
+    justify-content: center;
+    gap: 18px;
+}
 
 body {
     font-family: "Spline Sans Mono", monospace;
@@ -85,12 +84,12 @@ body {
     box-sizing: border-box;
 }
 
-.hero-centered {
+.hero-centered{
+    width: 100%;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;   /* horizontal center */
-    justify-content: center;
-    text-align: center;
+    align-items: center;
 }
 
 .hero-centered h2 {
@@ -109,7 +108,7 @@ body {
     position: relative;
     width: 850px;
     height: 600px;
-    /*transform: translateY(-40px) scale(0.75) translateX(135px);*/
+    transform: translateY(-40px) scale(0.7) translateX(135px);
     transform-origin: top center;
     margin: 0 auto;
 }
@@ -469,10 +468,9 @@ body.project-scroll {
     width: min(920px, 92vw);
 }
 
-/* ✅ scale the whole collage down on smaller screens (keeps your translate values!) */
 @media (max-width: 900px) {
     .collage-grid {
-        transform: scale(0.65) translateY(-120px) translateX(135px);
+        transform: scale(0.65) translateY(-120px);
         transform-origin: top center;
     }
 }
@@ -495,16 +493,16 @@ body.project-scroll {
     }
 }*/
 
-@media (max-width: 600px) {
-    .collage-grid {
-        left: 50%;
+@media (max-width: 600px){
+    .collage-grid{
         transform:
-                translateX(-50%)
-                scale(0.39)
-                translateY(-40px);
+                translateY(-40px)
+                translateX(-40px)
+                scale(0.35);
         transform-origin: top center;
     }
 }
+
 
 
 /*@media (max-width: 600px) {
