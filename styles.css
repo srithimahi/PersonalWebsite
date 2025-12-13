@@ -458,3 +458,39 @@ body.project-scroll {
     opacity: 1;
     text-decoration: underline;
 }
+
+.terminal-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.terminal {
+    width: min(920px, 92vw);
+}
+
+/* ✅ scale the whole collage down on smaller screens (keeps your translate values!) */
+@media (max-width: 900px) {
+    .collage-grid {
+        transform: scale(0.65) translateY(-40px) translateX(135px);
+        transform-origin: top center;
+    }
+}
+
+@media (max-width: 600px) {
+    .collage-grid {
+        left: 50%;
+        transform:
+                translateX(-50%)     /* ← centers the cluster */
+                scale(0.48)
+                translateY(-40px)
+                translateX(135px);   /* your original values */
+        transform-origin: top center;
+    }
+}
+
+/* ✅ if it's STILL too tall on phone, allow scrolling ONLY on mobile */
+@media (max-width: 600px) {
+    body.no-scroll {
+        overflow: auto;        /* allow scroll on phone */
+    }
+}
